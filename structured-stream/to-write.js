@@ -6,7 +6,7 @@ const i =
 };
 
 module.exports = socket => function write()
-{try {
+{
     const writes = Array.prototype.map.call(
         arguments,
         item =>
@@ -34,5 +34,5 @@ module.exports = socket => function write()
         return offset + 4 + number;
     }, 0);
 
-    socket.write(buffer);} catch (e) { console.log(arguments) }
+    socket.write(buffer);
 }
