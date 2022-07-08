@@ -1,6 +1,6 @@
 {
-  "name": "framed",
-  "version": "1.0.0",
+  "name": "structured-stream",
+  "version": "1.0.0-alpha.1",
   "main": "client.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
