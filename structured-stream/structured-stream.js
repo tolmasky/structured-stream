@@ -46,7 +46,7 @@ async function done(stream)
     const { name } = await event(
     {
         eventEmitter: stream,
-        resolveOn: ["readable", "finish", "close"],
+        resolveOn: ["readable", "end", "finish", "close"],
         rejectOn: ["error"]
     });
 
