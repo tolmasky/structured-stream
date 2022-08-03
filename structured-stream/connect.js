@@ -11,8 +11,9 @@ const retry = (f, { times, delay: timeout }) =>
 const net = require("net");
 
 
-module.exports = ({ port, host }) => given((
-    socket = net.createConnection(port, host)) =>
+// As opposed to `net.connect`, we set `keepAlive` to `true` by default.
+module.exports = options => given((
+    socket = net.connect({ keepAlive: true, ...options })) =>
     event
     ({
         eventEmitter: socket,
