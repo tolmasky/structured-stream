@@ -11,9 +11,10 @@ const retry = (f, { times, delay: timeout }) =>
 const net = require("net");
 
 
-// As opposed to `net.connect`, we set `keepAlive` to `true` by default.
+// FIXME: Should we set `keepAlive` to `true` (and `keepAliveInitialDelay`) by
+// default?
 module.exports = options => given((
-    socket = net.connect({ keepAlive: true, ...options })) =>
+    socket = net.connect(options)) =>
     event
     ({
         eventEmitter: socket,
